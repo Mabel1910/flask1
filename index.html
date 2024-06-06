@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Página de Flask</title>
+</head>
+<body>
+    <header>
+        <img src="https://www.google.com.mx/url?sa=i&url=http%3A%2F%2Fwww.uthh.edu.mx%2F%3Fval%3DZ2FsZXJpYV9kZXRhbGxlLnBocA%3D%3D%26c%3DNTU%3D%26M%3DNTI%3D&psig=AOvVaw2bLJyIHH-9qcAaIUUwhuZF&ust=1717778393904000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCZ8K21x4YDFQAAAAAdAAAAABAE" alt="Logo">
+        <h1>Ingeniería en Desarrollo y Gestión de Software</h1>
+        <h2>Mabel Bautista Alvarado 20210645</h2>
+        <h3>9° "A"</h3>
+    </header>
+    <h4>Registro de Productos</h4>
+    <form action="/" method="post">
+        Nombre del Producto: <input type="text" name="nombre"><br>
+        Precio: <input type="text" name="precio"><br>
+        <input type="submit" value="Registrar Producto">
+    </form>
+    <h4>Lista de Productos Registrados</h4>
+    <ul>
+        {% for producto in productos %}
+        <li>{{ producto.nombre }}: {{ producto.precio }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
